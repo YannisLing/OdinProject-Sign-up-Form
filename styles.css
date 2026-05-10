@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Sekuya&display=swap');
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;  /* 确保占满视口 */margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;  /* 防止水平滚动条导致的白边 */
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  background-color: whitesmoke ;
+}
+.left {
+  flex: 2;
+  width: 500px;
+  position: relative;
+  height: 100%;
+  background-size: cover
+}
+
+.left > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.left div {
+  position: absolute;
+  top: 180px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 160px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.4);
+  font-size: 4.5rem;
+  color: white;
+  font-family: "Sekuya", system-ui;
+}
+.left div img {
+  height: 130px;
+  width: 110px;
+}
+.left > p {
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-size:15;
+}
+
+.right {
+  display: flex; 
+  flex-direction: column;
+  align-items: center ;
+  flex: 3;
+  justify-content:space-evenly;
+  gap: 40px;
+ 
+}
+.right > p {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family: 'Courier New', Courier, monospace;
+
+  text-align: left;
+  width: 90%;
+}
+.right :last-child{
+  font-size: large;
+  font-weight: 300;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+
+}
+.right .panel{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-evenly;
+  background-color: white;
+  margin-top: 30px;
+  box-shadow: 
+    0 1px 2px rgba(0,0,0,0.05),    /* 第一层：近处 */
+    0 4px 8px rgba(0,0,0,0.1),     /* 第二层：远处，更虚 */
+    0 8px 16px rgba(0,0,0,0.1);    /* 第三层：最远处，最虚 */
+}
+.right .panel p{
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 90%;
+  margin-top: 25px;
+
+ 
+}
+.right .panel form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  align-items: flex-start;
+  gap: 30px;
+  justify-content: space-around;
+  height: 250px;
+  margin-bottom: 40px;
+}
+.right .panel form div{
+  display: flex;
+  flex-direction: column;
+}
+/* 基础重置 + 现代样式 */
+input {
+  /* 重置 */
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  
+  /* 基础 */
+  width: 350px;
+  padding: 5px 5px;
+  font-size: 12px;           /* 防止iOS缩放 */
+  line-height: 1;
+  color: #1f2937;
+  
+  /* 边框 */
+  border: 2px solid #e5e7eb;
+  border-radius: 5px;
+  
+  /* 过渡 */
+  transition: all 0.2s ease;
+}
+
+/* 状态变化 */
+input:focus, textarea:focus, select:focus {
+  border-color: #3b82f6;        /* 蓝色聚焦 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);  /* 外发光 */
+}
+
+input:hover, textarea:hover {
+  border-color: #9ca3af;        /* 悬停变灰 */
+}
+
+/* 错误状态 */
+input.error, input:user-invalid {
+  border-color: #ef4444;          /* 红色 */
+  background-color: #fef2f2;   /* 淡红背景 */
+}
+
+/* 禁用状态 */
+input:disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 占位符 */
+input::placeholder {
+  color: #9ca3af;
+}
+
+/* 特定类型优化 */
+input[type="search"] {
+  padding-left: 40px;          /* 给搜索图标留空 */
+  background: url('search-icon.svg') no-repeat 12px center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;  /* 隐藏数字箭头 */
+}
+
+/* 清除按钮（Webkit） */
+input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: url('close-icon.svg') no-repeat center;
+  cursor: pointer;
+}
